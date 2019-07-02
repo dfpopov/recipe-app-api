@@ -69,7 +69,7 @@ class PrivateRecipeApiTests(TestCase):
     def setUp(self):
         self.client = APIClient()
         self.user = get_user_model().objects.create_user(
-            'test@era.io',
+            'test@londonappdev.com',
             'testpass'
         )
         self.client.force_authenticate(self.user)
@@ -89,7 +89,7 @@ class PrivateRecipeApiTests(TestCase):
     def test_recipes_limited_to_user(self):
         """Test retrieving recipes for user"""
         user2 = get_user_model().objects.create_user(
-            'other@era.io',
+            'other@londonappdev.com',
             'password123'
         )
         sample_recipe(user=user2)
@@ -208,7 +208,7 @@ class RecipeImageUploadTests(TestCase):
     def setUp(self):
         self.client = APIClient()
         self.user = get_user_model().objects.create_user(
-            'user@era.io',
+            'user@londonappdev.com',
             'testpass'
         )
         self.client.force_authenticate(self.user)
